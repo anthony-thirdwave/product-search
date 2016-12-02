@@ -1,0 +1,24 @@
+.row
+  .col-md-3
+    %ol.breadcrumb
+      %li.breadcrumb-item
+        =link_to "Home", root_path
+      %li.breadcrumb-item.active
+        Search Results
+  .col-md-6
+    %h3
+      Top Results for "#{@params}"
+  .col-md-3
+    %h3 Stuff
+.row
+  .col-md-3
+    %li
+      = @products.aggs
+  .col-md-6
+    - @companies.each do |company|
+      .row{:style => "border: 2px solid black;"}
+        .col-md-12
+          %li= company.name
+          %li= company.full_address
+          %li= company.phone
+      %hr

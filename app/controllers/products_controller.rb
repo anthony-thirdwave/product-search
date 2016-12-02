@@ -3,19 +3,7 @@ class ProductsController < ApplicationController
 
 	# Index action to render all products
 	def index
-		@companies = []
-    if params[:query].nil?
-      @products = []
-    else
-      @products = Product.search params[:query]
-      @products.each do |product|
-        product.companies.each do |company|
-          if !@companies.include? company
-            @companies << company
-          end
-        end
-      end
-    end
+		@products = Product.all
 	end
 
 	# New action for creating product
@@ -66,7 +54,7 @@ class ProductsController < ApplicationController
 
 	def autocomplete
 		render json: Product.search(params[:query], autocomplete: false, limit: 10).map do |product|
-			{ title: product.cat_2, value: product.id }
+			{ title: product.category2, value: product.id }
 		end
 	end
 
