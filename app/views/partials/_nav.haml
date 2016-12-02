@@ -1,0 +1,110 @@
+%nav.navbar.navbar-default
+  .col-md-8.col-md-offset-2
+    .row
+      .col-md-3.text-center
+        %h1= link_to 'LOGO', root_path
+      .col-md-6.text-center
+        .input-group{:style => "margin-top: 25px;"}
+          = form_tag products_path, method: :get do
+            = text_field_tag :query, params[:query], class: 'input form-control', style: 'width: 220px;'
+            %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+              %span#search_concept All States
+              %span.caret
+            %ul.dropdown-menu{:role => "menu"}
+              %li
+                %a{:href => "#contains"} Contains
+              %li
+                %a{:href => "#its_equal"} It's equal
+              %li
+                %a{:href => "#greather_than"} Greather than &gt;
+              %li
+                %a{:href => "#less_than"} Less than
+              %li.divider
+              %li
+                %a{:href => "#all"} Anything
+            = submit_tag 'Search', class: "btn btn-default"
+      .col-md-3.text-center
+        %ul.nav.navbar-nav.navbar-right{:style => "margin-top: 18px;"}
+          %li
+            %a{:href => "#"}
+              %span.glyphicon.glyphicon-user
+              Sign Up
+          %li
+            %a{:href => "#"}
+              %span.glyphicon.glyphicon-log-in
+              Login
+    .row
+      .col-md-2.col-md-offset-2
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Equipment
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#"} Action
+              %li
+                %a{:href => "#"} Another action
+              %li
+                %a{:href => "#"} Something else here
+              %li.divider{:role => "separator"}
+              %li
+                %a{:href => "#"} Separated link
+              %li.divider{:role => "separator"}
+              %li
+                %a{:href => "#"} One more separated link
+      .col-md-2
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Materials
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "/products"} All Materials
+              %li
+                %a{:href => "/products/new"} New Material
+              %li.divider{:role => "separator"}
+              %li
+                %a{:href => "#"} Separated link
+              %li.divider{:role => "separator"}
+              %li
+                %a{:href => "#"} One more separated link
+      .col-md-2
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Services
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#"} Action
+              %li
+                %a{:href => "#"} Another action
+              %li
+                %a{:href => "#"} Something else here
+              %li.divider{:role => "separator"}
+              %li
+                %a{:href => "#"} Separated link
+              %li.divider{:role => "separator"}
+              %li
+                %a{:href => "#"} One more separated link
+      .col-md-3
+        %ul.nav.navbar-nav
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Consumables
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#"} Action
+              %li
+                %a{:href => "#"} Another action
+              %li
+                %a{:href => "#"} Something else here
+              %li.divider{:role => "separator"}
+              %li
+                %a{:href => "#"} Separated link
+              %li.divider{:role => "separator"}
+              %li
+                %a{:href => "#"} One more separated link
