@@ -5,8 +5,8 @@
         %h1= link_to 'LOGO', root_path
       .col-md-6.text-center
         .input-group{:style => "margin-top: 25px;"}
-          = form_tag search_path, method: :get do
-            = text_field_tag :query, params[:query], class: 'form-contro typeaheadl', style: 'width: 400px;', id: 'product_search'
+          = form_tag products_path, method: :get do
+            = text_field_tag :query, params[:query], class: 'input form-control', style: 'width: 220px;'
             %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
               %span#search_concept All States
               %span.caret
